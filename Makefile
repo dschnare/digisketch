@@ -1,0 +1,2 @@
+dschnare-js1k2013.min.js: dschnare-js1k2013.js
+	java -jar compiler.jar --js dschnare-js1k2013.js --js_output_file dschnare-js1k2013.min.js --compilation_level ADVANCED_OPTIMIZATIONS --externs externs.js
