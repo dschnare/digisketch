@@ -37,7 +37,7 @@ function m(w, kx, ky, v, px, py, s, bg, fg) {
   
   s = s.cloneNode();
   s.innerHTML = 'Save';
-  s.onclick = function () { window.location = c.toDataURL(); };
+  s.onclick = function () { g.location = c.toDataURL(); };
   h.call(b, s);
 
   n.call(b, 'keydown', function (e, k) {
