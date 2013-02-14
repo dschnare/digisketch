@@ -1,5 +1,5 @@
 d = document;
-n = d.addEventListener;
+n = b.addEventListener;
 l = d.createElement;
 h = b.appendChild;
 f = 'monospace';
@@ -41,12 +41,12 @@ function m(w, kx, ky, v, px, py, s, bg, fg) {
   s.onclick = function () { window.location = c.toDataURL(); };
   h.call(b, s);
 
-  n.call(d, 'keydown', function (e, k) {
+  n.call(b, 'keydown', function (e, k) {
     k = e.keyCode;
     kx = k==90 || k==88 ? k : kx;
     ky = k==190 || k==191 ? k : ky;
   });
-  n.call(d, 'keyup', function (e) {
+  n.call(b, 'keyup', function (e) {
     k = e.keyCode;
     kx = k==90 || k==88 ? -1 : kx;
     ky = k==190 || k==191 ? -1 : ky;
