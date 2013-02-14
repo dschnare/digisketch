@@ -3,7 +3,7 @@ n = b.addEventListener;
 l = d.createElement;
 h = b.appendChild;
 f = 'monospace';
-
+q = mozRequestAnimationFrame || requestAnimationFrame;
 
 b.style.textAlign = 'center';
 c.style.border = 'thin solid black';
@@ -15,7 +15,7 @@ b.insertBefore(s, c);
 
 s = l.call(d, 'div');
 s.style.fontFamily = f;
-s.innerHTML = 'Z=left X=right &gt;=up ?=down';
+s.innerHTML = 'Z=left X=right &lt;=up &gt;=down';
 h.call(b, s);
 
 m();
@@ -44,22 +44,22 @@ function m(w, kx, ky, v, px, py, s, bg, fg) {
   n.call(b, 'keydown', function (e, k) {
     k = e.keyCode;
     kx = k==90 || k==88 ? k : kx;
-    ky = k==190 || k==191 ? k : ky;
+    ky = k==188 || k==190 ? k : ky;
   });
   n.call(b, 'keyup', function (e) {
     k = e.keyCode;
     kx = k==90 || k==88 ? -1 : kx;
-    ky = k==190 || k==191 ? -1 : ky;
+    ky = k==188 || k==190 ? -1 : ky;
   });
 
   a.fillStyle = fg = '#1E1E1E';
   function update() {
     if (kx==90) px -= v;
     if (kx==88) px += v;
-    if (ky==190) py -= v;
-    if (ky==191) py += v;
+    if (ky==188) py -= v;
+    if (ky==190) py += v;
     a.fillRect(px, py, 1, 1);
-    requestAnimationFrame(update);
+    q(update);
   }
   update();
 }
